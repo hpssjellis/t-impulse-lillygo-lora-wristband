@@ -7,6 +7,9 @@ https://brief-tadpole-2d3.notion.site/TTGO-T-Impulse-49f8f052f09641499c563194c66
 
 
 
+.
+
+.
 
 
 Main github  https://github.com/Xinyuan-LilyGO/T-Impulse
