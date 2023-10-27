@@ -52,3 +52,20 @@ https://github.com/stm32duino/Arduino_Core_STM32/wiki/Upload-methods#stm32cubepr
 ## Useful Info
 
 Board Number ```nucleo_l073rz```
+
+
+Images here are super useful
+
+https://github.com/Xinyuan-LilyGO/T-Impulse/tree/master/image
+
+The DFU- util is what is needed for installing windows but use the above images to figure out how to do it.
+
+I did not have a driver installed so my image is slightly different. When it finished it looked like this
+
+
+<img width="429" alt="image" src="https://github.com/hpssjellis/t-impulse-lillygo-lora-wristband/assets/5605614/73b76abc-f2c7-4b4e-92a4-8933079d54cd">
+
+
+
+
+
