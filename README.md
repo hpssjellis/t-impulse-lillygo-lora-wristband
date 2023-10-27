@@ -1,6 +1,14 @@
 # t-impulse-lillygo-lora-wristband
 
 
+Good setup by Roshan   
+
+https://brief-tadpole-2d3.notion.site/TTGO-T-Impulse-49f8f052f09641499c563194c666f813
+
+
+
+
+
 Main github  https://github.com/Xinyuan-LilyGO/T-Impulse
 
 Downloading this github has some folders that may help with the install on Arduino. The main install is setup for Platformio.org which might be a good route.
