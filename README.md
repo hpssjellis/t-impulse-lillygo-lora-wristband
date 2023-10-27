@@ -3,6 +3,12 @@
 
 Main github  https://github.com/Xinyuan-LilyGO/T-Impulse
 
+Downloading this github has some folders that may help with the install on Arduino. The main install is setup for Platformio.org which might be a good route.
+
+So far I can see the DFU connection but can't install a program. On platformio the S76G-Factory code compiles but does not load.
+
+[S76G-Factory](https://github.com/Xinyuan-LilyGO/T-Impulse/tree/master/Example/S76G-Factory)
+
 possible incorrect arduino IDE json link
 
 This link has a json that works
