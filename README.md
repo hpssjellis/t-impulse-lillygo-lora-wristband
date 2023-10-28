@@ -15,7 +15,7 @@ Created time: October 26, 2023 7:07 PM
 3. Open Device Manager. If you see a device listed in the “Other devices” section this means the driver is not installed properly there are extra steps to be carried out.
 Else, You can go to step 6.
 
-![Untitled](TTGO%20T-Impulse%2049f8f052f09641499c563194c666f813/Untitled.png)
+![Untitled](images/Untitled.png)
 
 1. Download and Install “****STSW-STM32080”**** from the link below 
 
@@ -78,15 +78,15 @@ https://raw.githubusercontent.com/stm32duino/BoardManagerFiles/main/package_stmi
     **Note - Here the port is dfu-port** 
     
 
-![Untitled](TTGO%20T-Impulse%2049f8f052f09641499c563194c666f813/Untitled.jpeg)
+![Untitled](images/Untitled.jpeg)
 
 1. Upload the S76G Factory code from the example. After completion, it will look like something like this 
 
-![Untitled](TTGO%20T-Impulse%2049f8f052f09641499c563194c666f813/Untitled%201.jpeg)
+![Untitled](images/Untitled%201.jpeg)
 
 1. Open the Serial port with the 115200 baud rate you can see the device logs 
 
-![Untitled](TTGO%20T-Impulse%2049f8f052f09641499c563194c666f813/Untitled%202.jpeg)
+![Untitled](images/Untitled%202.jpeg)
 
 ### Useful Links
 
