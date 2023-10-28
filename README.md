@@ -1,71 +1,103 @@
-# t-impulse-lillygo-lora-wristband
+# TTGO T-Impulse
 
+Created by: Roshan Kattel
+Created time: October 26, 2023 7:07 PM
 
-Main github  https://github.com/Xinyuan-LilyGO/T-Impulse
+# Development Environment Setup
 
-Downloading this github has some folders that may help with the install on Arduino. The main install is setup for Platformio.org which might be a good route.
+## I. Drivers Installation in Windows device
 
-So far I can see the DFU connection but can't install a program. On platformio the S76G-Factory code compiles but does not load.
+1. Install **STM32CubeProgrammer software** ****from STM32 official website****
+    
+    [STM32CubeProg - STMicroelectronics](https://www.st.com/en/development-tools/stm32cubeprog.html)
+    
+2. Ensure the TTGO device is connected to the PC with a High-quality Type C cable. **(Recommended Type C to Type C cable)**
+3. Open Device Manager. If you see a device listed in the “Other devices” section this means the driver is not installed properly there are extra steps to be carried out.
+Else, You can go to step 6.
 
-[S76G-Factory](https://github.com/Xinyuan-LilyGO/T-Impulse/tree/master/Example/S76G-Factory)
+![Untitled](TTGO%20T-Impulse%2049f8f052f09641499c563194c666f813/Untitled.png)
 
-possible incorrect arduino IDE json link
+1. Download and Install “****STSW-STM32080”**** from the link below 
 
-This link has a json that works
+[STSW-STM32080 - STMicroelectronics](https://www.st.com/en/development-tools/stsw-stm32080.html)
 
-https://github.com/stm32duino/Arduino_Core_STM32
+1. Go to the device manager and update the firmware of the device as instructed in this video 
 
-The json for the arduino IDE is Note: ```main```` instead of ```master```
+[how to show windows 10 where the dfu driver is for dfuse/ct5 fw updates](https://www.youtube.com/watch?v=8rPN5-Ce2cc)
 
-https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json
+1. Change the state of the TTGO device to programming mode
+    1. When the device is connected to the PC **press** and **hold** the boot button 
+    2. Then, **press** the reset button once and **release** the boot button. 
+    
+    **Note - You will hear the sound of a USB plugged into windows** 
+    
+2. After you follow the steps you can see the drivers are properly installed in DFU mode 
 
+![Untitled](TTGO%20T-Impulse%2049f8f052f09641499c563194c666f813/Untitled%201.png)
 
-## First steps Oct26, 2023
+1. Now Replace the Driver using Zadiag
+- Open the device manager, as shown in the figure, and you will find `STM Device in DFU Mode`. At this time, the firmware cannot be uploaded. You need to use [zadig](https://zadig.akeo.ie/) to replace the original driver. The operation steps are as follows
+    
+    ![https://github.com/Xinyuan-LilyGO/T-Impulse/raw/master/image/1.png](https://github.com/Xinyuan-LilyGO/T-Impulse/raw/master/image/1.png)
+    
+- Choose `STM32 BOOLTOADER`,Note not `NUCLEO_L073RZ CDC in FS Mode`.
+    
+    ![https://github.com/Xinyuan-LilyGO/T-Impulse/raw/master/image/2.png](https://github.com/Xinyuan-LilyGO/T-Impulse/raw/master/image/2.png)
+    
+- Click Replace Driver
+    
+    ![https://github.com/Xinyuan-LilyGO/T-Impulse/raw/master/image/3.png](https://github.com/Xinyuan-LilyGO/T-Impulse/raw/master/image/3.png)
+    
+    ![https://github.com/Xinyuan-LilyGO/T-Impulse/raw/master/image/4.png](https://github.com/Xinyuan-LilyGO/T-Impulse/raw/master/image/4.png)
+    
 
-USB-C cable issue. It has to be pushed all the way in. not really obvious
+***Hence, The driver installation is successful.*** 
 
-Check windows device manager both the com-ports and the Universal serial bus controllers
-In the com ports it might show both the regular serial port and the STM32-bootloader  the Universal serial port only shows the ST loader showing up on some windows computers. I am using win11
+## II. Upload code using Arduino IDE
 
-Get used to how to put the t-impulse into serial and DFU modes using the buttons.
+1. Download [Arduino IDE](https://www.arduino.cc/en/software)
+2. Open Arduino, open preferences-> add to the board installation manager address list
 
-boot nearest usb-c connecto  
-reset farthest away from usb-C serial port
+```jsx
+https://raw.githubusercontent.com/stm32duino/BoardManagerFiles/main/package_stmicroelectronics_index.json
+```
 
-1. reset resets the t-impulse takes about 3 seconds to load.
-2. boot then prog-in usb-C and get into DFU-mode   OR   boot and reset, then release reset then 2 seconds later release reset, then release boot works but get used to it.
-3. 
+1. Open the board installation manager, wait for the index update to complete, select 'STM32 MCU based boards' and click install
+2. Copy all the folders in the lib from [here](https://github.com/Xinyuan-LilyGO/T-Impulse/tree/master/lib) directory to
 
-This link may have some drivers
+ `"C:\User\<YourName>\Documents\Arduino\libraries"`
 
-This link may be useful   https://www.onetransistor.eu/2017/11/stm32-bluepill-arduino-ide.html
+1. Change the state of the TTGO device to programming mode
+    1. When the device is connected to the PC **press** and **hold** the boot button 
+    2. Then, **press** the reset button once and **release** the boot button. 
+    
+    **Note - You will hear the sound of a USB plugged into windows** 
+    
+2. Select the parameters as shown in the figure below 
+    
+    **Note - Here the port is dfu-port** 
+    
 
+![Untitled](TTGO%20T-Impulse%2049f8f052f09641499c563194c666f813/Untitled.jpeg)
 
+1. Upload the S76G Factory code from the example. After completion, it will look like something like this 
 
+![Untitled](TTGO%20T-Impulse%2049f8f052f09641499c563194c666f813/Untitled%201.jpeg)
 
-This might be useful
-https://github.com/stm32duino/Arduino_Core_STM32/wiki/Upload-methods#stm32cubeprogrammer
+1. Open the Serial port with the 115200 baud rate you can see the device logs 
 
+![Untitled](TTGO%20T-Impulse%2049f8f052f09641499c563194c666f813/Untitled%202.jpeg)
 
+### Useful Links
 
+[https://github.com/Xinyuan-LilyGO/T-Impulse](https://github.com/Xinyuan-LilyGO/T-Impulse)
 
-## Useful Info
+[](https://github.com/stm32duino/BoardManagerFiles/raw/main/package_stmicroelectronics_index.json)
 
-Board Number ```nucleo_l073rz```
+[GitHub - stm32duino/Arduino_Core_STM32: STM32 core support for Arduino](https://github.com/stm32duino/Arduino_Core_STM32#getting-started)
 
+[Bracelet Edition](https://github.com/lyusupov/SoftRF/wiki/Bracelet-Edition)
 
-Images here are super useful
+[https://github.com/xoseperez/s7xg](https://github.com/xoseperez/s7xg)
 
-https://github.com/Xinyuan-LilyGO/T-Impulse/tree/master/image
-
-The DFU- util is what is needed for installing windows but use the above images to figure out how to do it.
-
-I did not have a driver installed so my image is slightly different. When it finished it looked like this
-
-
-<img width="429" alt="image" src="https://github.com/hpssjellis/t-impulse-lillygo-lora-wristband/assets/5605614/73b76abc-f2c7-4b4e-92a4-8933079d54cd">
-
-
-
-
-
+[https://www.youtube.com/watch?v=8rPN5-Ce2cc](https://www.youtube.com/watch?v=8rPN5-Ce2cc)
