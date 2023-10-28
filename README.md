@@ -1,7 +1,7 @@
 # t-impulse-lillygo-lora-wristband
 
 
-Good setup by Roshan   
+Good setup by @RoshanKattel   
 
 https://brief-tadpole-2d3.notion.site/TTGO-T-Impulse-49f8f052f09641499c563194c666f813
 
