@@ -15,7 +15,7 @@ Created time: October 26, 2023 7:07 PM
 3. Open Device Manager. If you see a device listed in the “Other devices” section this means the driver is not installed properly there are extra steps to be carried out.
 Else, You can go to step 6.
 
-![Untitled](images/Untitled.png)
+![Untitled](images/Untitled_not.png)
 
 1. Download and Install “****STSW-STM32080”**** from the link below 
 
