@@ -15,7 +15,7 @@ Created time: October 26, 2023 7:07 PM
 3. Open Device Manager. If you see a device listed in the “Other devices” section this means the driver is not installed properly there are extra steps to be carried out.
 Else, You can go to step 6.
 
-![Untitled](images/Untitled_not.png)
+![Untitled](images/Untitled_not.jpeg)
 
 1. Download and Install “****STSW-STM32080”**** from the link below 
 
@@ -33,7 +33,7 @@ Else, You can go to step 6.
     
 2. After you follow the steps you can see the drivers are properly installed in DFU mode 
 
-![Untitled](TTGO%20T-Impulse%2049f8f052f09641499c563194c666f813/Untitled%201.png)
+![Untitled](images/Untitled%201.png)
 
 1. Now Replace the Driver using Zadiag
 - Open the device manager, as shown in the figure, and you will find `STM Device in DFU Mode`. At this time, the firmware cannot be uploaded. You need to use [zadig](https://zadig.akeo.ie/) to replace the original driver. The operation steps are as follows
